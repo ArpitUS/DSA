@@ -8,3 +8,21 @@
 
 // Input: [3,2,3]
 // Output: 3
+
+package arrays
+
+func majorityElement(nums []int) int {
+	count := 0
+	var candidate int
+	for _, num := range nums {
+		if count == 0 {
+			candidate = num
+		}
+		if num == candidate {
+			count++
+		} else {
+			count--
+		}
+	}
+	return candidate
+}
